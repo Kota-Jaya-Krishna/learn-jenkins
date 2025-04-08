@@ -3,26 +3,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script{
-                    sh "This is Build"
-                }
+                sh 'echo This is build'
 
             }
         }
         stage('Test') {
             steps {
-                script{
-                    sh "This is Test"
-                }
-                
+                sh 'echo This is Test'
             }
         }
         stage('Deploy') {
             steps {
-                script{
-                    sh "This is deploy"
-                }
-                
+                sh ' echo This is Deploy'
             }
         }
     }
