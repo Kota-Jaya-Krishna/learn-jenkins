@@ -2,10 +2,14 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    options {
+        timeout(time: 10, unit: 'SECONDS')     //pipeline will fail if it runs more than 10 sec//
+    }
     stages {
         stage('Build') {
             steps {
                 sh 'echo This is build'
+                sh 'sleep 10'
 
             }
         }
