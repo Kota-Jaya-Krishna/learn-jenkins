@@ -5,7 +5,7 @@ pipeline {
     options {
         timeout(time: 10, unit: 'SECONDS')     //pipeline will fail if it runs more than 10 sec//
         disableConcurrentBuilds()              // we should not run two build at same time, so we need to use disableconcurrentbuilds//
-        retry(2)
+        retry(2)                               // if it fails, it will run 2nd time//
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -30,12 +30,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh ' echo This is Deploy'
-                error 'pipeline failed'
+                //error 'pipeline failed'
             }
         }
         stage('Print params') {
             steps {
-                echo "Hello ${params.PERSON}"
+                echo "Hello ${params.PERSON}"                   // params is the reserved keyword //
                 echo "Biography: ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
