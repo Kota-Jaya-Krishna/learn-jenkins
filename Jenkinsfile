@@ -5,7 +5,7 @@ pipeline {
     options {
         timeout(time: 10, unit: 'SECONDS')     //pipeline will fail if it runs more than 10 sec//
         disableConcurrentBuilds()              // we should not run two build at same time, so we need to use disableconcurrentbuilds//
-        retry(2)                               // if it fails, it will run 2nd time//
+        retry(1)                               // if it fails, it will run 2nd time//
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
