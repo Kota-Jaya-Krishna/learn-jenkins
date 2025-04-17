@@ -36,7 +36,7 @@ pipeline {
         stage('Print params') {
             steps {
                 echo "Hello ${params.PERSON}"                   // params is the reserved keyword //
-                echo "Biography: ${params.BIOGRAPHY}"
+                echo "Biography:  ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
                 echo "Password: ${params.PASSWORD}"
