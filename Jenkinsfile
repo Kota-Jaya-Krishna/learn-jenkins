@@ -4,7 +4,7 @@ pipeline {
     }
     options {
         timeout(time: 10, unit: 'SECONDS')     //pipeline will fail if it runs more than 10 sec//
-        disableConcurrentBuilds()
+        disableConcurrentBuilds()              // we should not run two build at same time, so we need to use disableconcurrentbuilds//
         retry(1)
     }
     parameters {
@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh ' echo This is Deploy'
-                //error 'pipeline failed'
+                error 'pipeline failed'
             }
         }
         stage('Print params') {
