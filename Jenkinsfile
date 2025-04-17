@@ -46,6 +46,7 @@ pipeline {
         post { 
         always { 
             echo "This section run always"
+            deleteDir()             // after pipeline is triggered, we can add deletedir function,it will delete the directory where jenkins file is there
         }
         success {
             echo "This section will run when pipeline success"
